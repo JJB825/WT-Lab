@@ -1,0 +1,102 @@
+main section {
+  background-color: #f4f6f8;
+  margin: 20px 40px;
+  padding: 10px 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 3fr;
+}
+
+main section header {
+  grid-area: 1 / 1 / span 1 / span 2;
+}
+
+main section header h1 {
+  text-align: center;
+  color: rgb(129, 196, 8);
+  font-size: 2.5rem;
+  font-family: 'Inconsolata', monospace;
+}
+
+main section form {
+  grid-area: 2 / 1 / span 1 / span 1;
+  padding: 10px;
+}
+
+main section p {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.form-error {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  width: 55%;
+  padding: 10px;
+  font-size: 18px;
+  margin: 15px 15px 15px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+input[type='submit'] {
+  border-radius: 10px;
+  border: 1px solid orange;
+  background: #fff;
+  color: #29fd53;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 1s;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+input[type='submit']:hover {
+  background-color: orange;
+  color: white;
+}
+
+main section aside {
+  grid-area: 2 / 2 / span 1 / span 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+main section aside > * {
+  background: #fff;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+main section aside > * .symbol {
+  grid-area: 1 / 1 / span 2 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  color: #29fd53;
+}
+
+main section aside h1 {
+  text-align: left;
+  color: rgb(129, 196, 8);
+  font-size: 24px;
+}
+
+main section aside p {
+  text-align: left;
+  font-size: 20px;
+}

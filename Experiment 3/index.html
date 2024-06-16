@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indian Navy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        font-family: 'Nunito', sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        color: black;
+        margin: 0;
+        padding: 0;
+        background-image: url('./background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      footer {
+        font-size: 17px;
+        color: white;
+        margin: 20px 0 0 10px;
+      }
+      footer #copyright {
+        font-family: 'Times New Roman';
+        text-align: center;
+      }
+      footer .contact-details {
+        display: flex;
+        justify-content: start;
+        gap: 10px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img src="./navy-logo.png" alt="navy logo" style="height: 100px" />
+      <h1>Indian Navy</h1>
+      <input
+        class="search-bar"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+    </div>
+    <div class="navbar">
+      <p><a href="#about-us">About Us</a></p>
+      <p><a href="#how-to-join">How to join</a></p>
+      <p><a href="#contact">Contact Us</a></p>
+    </div>
+    <main>
+      <section id="about-us">
+        <h1>About Us</h1>
+        <iframe
+          src="https://en.wikipedia.org/wiki/Indian_Navy"
+          width="100%"
+          height="300"
+          style="border: 1px solid black"
+          name="wikipedia_iframe"
+        ></iframe>
+      </section>
+      <section id="how-to-join">
+        <h1>How to join</h1>
+        <p>
+          To join the Indian Navy click on the <strong>image</strong> below 👇🏻
+        </p>
+        <img
+          src="./navy_logo.png"
+          alt="form-redirect"
+          style="height: 200px; margin-left: 25%"
+          usemap="#form-map"
+        />
+        <map name="form-map">
+          <area
+            target="_blank"
+            alt="navy logo"
+            title="Click me to enter joining form of Indian Navy"
+            href="./form.html"
+            coords="162,165,162"
+            shape="circle"
+          />
+        </map>
+      </section>
+    </main>
+    <hr />
+    <footer>
+      <section id="contact">
+        <h1>Contact Us</h1>
+        <div class="contact-details">
+          <p>Find us at:</p>
+          <p>Tel No: 987654321</p>
+          <p>Gmail: abc@gmail.com</p>
+          <p>Facebook: xyz@facebook.com</p>
+        </div>
+      </section>
+      <p id="copyright">
+        <strong>
+          Copyright ©
+          <span id="year"></span>
+          VJTI Mumbai. All rights reserved.
+        </strong>
+      </p>
+    </footer>
+
+    <script>
+      let year = new Date().getFullYear()
+      document.getElementById('year').innerHTML = year
+    </script>
+  </body>
+</html>

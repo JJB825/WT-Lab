@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VJTI-Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* I have used a header (container) for creating a flexbox.  */
+      header {
+        display: flex;
+        /* denoting use of flexbox */
+        flex: 1;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* to align flex-items in center */
+        padding: 5px 0 5px 40px;
+        /* ensures proper alignment of items and helpful in separating content from borders */
+      }
+
+      header img {
+        width: 70px;
+      }
+
+      header div p {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 200;
+        text-align: center;
+        margin-top: 0;
+      }
+
+      header div h3 {
+        font-family: 'Roboto Slab', serif;
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+      }
+
+      /* this is basic structuring of navbar */
+      nav {
+        width: 100%;
+        height: 2rem;
+        line-height: 2rem;
+        background-color: white;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 15px;
+        color: rgb(2, 116, 190);
+      }
+
+      /* this is basic structuring of elements of navbar */
+      .menu {
+        display: flex;
+        justify-content: space-evenly;
+        /* space-evenly ensures even spacing between flex-items */
+        align-items: center;
+        gap: 2rem;
+        margin: 0 2rem;
+      }
+
+      .menu li {
+        list-style: none;
+        position: relative;
+        cursor: pointer;
+      }
+      .menu li p {
+        margin: 0;
+        transition: 0.1s ease-in-out;
+        /* for smooth experience of hover */
+      }
+
+      /* this effect is visible when the p tag is hovered */
+      .menu li:hover p {
+        color: black;
+        font-weight: 600;
+      }
+
+      .menu li:hover ul {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* this is basic structuring of drop-down menu */
+      .drop-down {
+        position: absolute;
+        top: 1.5rem;
+        left: -1rem;
+        background-color: white;
+        border-radius: 5px;
+        width: 12rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        /* this three statements ensure that the drop-down is hidden first, and when we hover it it becomes visible  */
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s opacity ease-in-out;
+      }
+
+      .drop-down hr {
+        border: 0;
+        height: 1px;
+        width: 100%;
+        background: rgb(2, 116, 190);
+        margin: 5px 0 10px;
+      }
+
+      .drop-down li {
+        transition: 0.1s ease-in-out;
+      }
+
+      /* this is for drop-down effect  */
+      .drop-down li:hover {
+        color: black;
+        font-weight: 600;
+      }
+
+      /* from here starts the structuring of main content */
+      main {
+        margin: 10px;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 20px;
+        color: black;
+      }
+
+      main img {
+        width: 600px;
+        margin: 20px 40px;
+      }
+
+      main ol li {
+        margin: 5px 0 5px 0;
+      }
+
+      main ul {
+        margin: 5px 0 20px 0;
+      }
+
+      main ul li {
+        list-style-type: disc;
+        position: relative;
+        left: -1.4rem;
+      }
+
+      /* this is basic structuring of footer */
+      footer {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 17px;
+        color: black;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header part -->
+    <header>
+      <div class="marathi">
+        <!-- Title -->
+        <h3><strong>वीरमाता जिजाबाई तंत्रज्ञान संस्था</strong></h3>
+        <p>( महाराष्ट्र शासनाची स्वायत्त संस्था )</p>
+      </div>
+      <!-- Logo image -->
+      <img
+        src="https://vjti.ac.in/wp-content/uploads/oldupload/cropped-New-VJTI-Logo_1-1-60x87.jpg"
+        alt="vjti-logo-image"
+      />
+      <div class="english">
+        <h3><strong>Veermata Jijabai Technological Institute</strong></h3>
+        <p>(An Autonomous Institute of Government of Maharashtra)</p>
+      </div>
+    </header>
+    <hr />
+    <!-- Navbar -->
+    <nav>
+      <!-- Creating important links for website 
+      ul denotes unordered list while ol denotes ordered list -->
+      <ul class="menu">
+        <li>
+          <p>About</p>
+          <!-- Creating drop-down menu -->
+          <ul class="drop-down">
+            <li>History</li>
+            <!-- hr denotes horizontal ruler (line) -->
+            <hr />
+            <li>Vision & Mission</li>
+            <hr />
+            <li>Director VJTI</li>
+            <hr />
+            <li>Administration</li>
+            <hr />
+            <li>Deans at VJTI</li>
+            <hr />
+            <li>Compliance/Disclosures</li>
+            <hr />
+            <li>VJTI in India NIRF Ranking</li>
+            <hr />
+            <li>VJTI 2021 ARIIA</li>
+            <hr />
+            <li>How to reach VJTI Mumbai</li>
+            <hr />
+            <li>Contact Us</li>
+          </ul>
+        </li>
+        <li>
+          <p>Students</p>
+          <ul class="drop-down">
+            <li>Announcements for Degree students</li>
+            <hr />
+            <li>Announcements for Diploma Students</li>
+            <hr />
+            <li>Useful forms for students</li>
+            <hr />
+            <li>Student achievements</li>
+            <hr />
+            <li>Fees and Registration for AY 2023-2024</li>
+            <hr />
+            <li>Scholarships</li>
+            <hr />
+            <li>Student Organizations</li>
+          </ul>
+        </li>
+        <li>
+          <p>Admissions</p>
+          <ul class="drop-down">
+            <li>Message for Student Applicants</li>
+            <hr />
+            <li>Under Graduate Programs</li>
+            <hr />
+            <li>Post graduate programs</li>
+            <hr />
+            <li>Diploma Programs</li>
+            <hr />
+            <li>Ph.D. Programs</li>
+            <hr />
+            <li>Master of Computer Applications (MCA)</li>
+          </ul>
+        </li>
+        <li>
+          <p>Academics</p>
+          <ul class="drop-down">
+            <li>Rules and Guidelines for DIPLOMA/ UG /PG-MCA and Ph.D</li>
+            <hr />
+            <li>Academic Calendar</li>
+            <hr />
+            <li>First Year Degree Details</li>
+            <hr />
+            <li>First Year Diploma Details</li>
+            <hr />
+            <li>Academic Departments</li>
+          </ul>
+        </li>
+        <li>
+          <p>Career & Alumni</p>
+          <ul class="drop-down">
+            <li>Job Openings at VJTI</li>
+            <hr />
+            <li>Alumni</li>
+          </ul>
+        </li>
+        <li><p>TPO</p></li>
+        <li>
+          <p>Facilities</p>
+          <ul class="drop-down">
+            <li>Hostel Facilities</li>
+            <hr />
+            <li>Library</li>
+            <hr />
+            <li>Women's Development Cell</li>
+            <hr />
+            <li>CoE CNDS</li>
+            <hr />
+            <li>Labs</li>
+            <hr />
+            <li>TEQIP</li>
+            <hr />
+            <li>NATIONAL CADET CORPS</li>
+            <hr />
+            <li>Other facilities</li>
+          </ul>
+        </li>
+        <li><p>Activities & Events</p></li>
+        <li><p>GIAN Courses</p></li>
+        <li><p>Tenders</p></li>
+        <li><p>NEP-2020</p></li>
+        <li>
+          <p>Other</p>
+          <ul class="drop-down">
+            <li>Committees formed under UGC</li>
+            <hr />
+            <li>Non Teaching Seniority List</li>
+            <hr />
+            <li>Useful forms for Faculty & Staff</li>
+            <hr />
+            <li>VJTI TBI</li>
+            <hr />
+            <li>Right to Information (RTI)</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <!-- VJTI top view image  -->
+      <img
+        src="https://vjti.ac.in/wp-content/uploads/2021/07/VJTI-LandingPageV3.jpg"
+        alt="vjti-landing-page"
+      />
+      <!-- Self details -->
+      <!-- tags h1 to h6 are used for headings based on importance, here only h2 to h4 are used  -->
+      <h2>Introduction:-</h2>
+      <h3>
+        Name: Jishnu Jayant Bandodkar<br />
+        Roll Number: 221070006<br />
+        Course: Web Technology Lab
+      </h3>
+      <!-- Theory -->
+      <h2>Theory:-</h2>
+      <!-- a p tag is used for including text in webpage -->
+      <p>
+        <!-- a strong tag is used for emphasing on particular text -->
+        HTML stands for <strong>HyperText Markup Language</strong>. It creates a
+        complete website structure of web pages. HTML is a combination of
+        Hypertext and Markup language. Hypertext defines the link between the
+        web pages and markup language defines the text document within the tag.
+        HTML is generally used to describe a web page's appearance/presentation
+        <!-- u tag is used for underlining a text  -->
+        (<u>CSS</u>) or functionality/behavior (<u>JavaScript</u>).
+      </p>
+      <p>The following things are required in every HTML document:</p>
+      <ol>
+        <li>
+          <!-- the &lt; and &gt; is used for including < and > signs in your text -->
+          The <strong>&lt;!DOCTYPE html&gt;</strong> declaration defines that
+          this document is an
+          <strong>HTML5 document</strong>
+        </li>
+        <li>
+          The <strong>&lt;html&gt;</strong> element is the
+          <strong>root</strong> element of an HTML page
+        </li>
+        <li>
+          The <strong>&lt;head element&gt;</strong> contains
+          <strong>meta information</strong> about the HTML page
+        </li>
+        <li>
+          The <strong>&lt;title element&gt;</strong> specifies a
+          <strong>title</strong> for the HTML page (which is shown in the
+          browser's title bar or in the page's tab)
+        </li>
+        <li>
+          The <strong>&lt;body&gt;</strong> element defines the document's
+          <strong>body</strong>, and is a container for all the visible
+          contents, such as headings, paragraphs, images, hyperlinks, tables,
+          lists, etc.
+        </li>
+      </ol>
+      <p>
+        Webpages can and will look pretty different from one another, but they
+        all tend to share similar standard components, like:
+      </p>
+      <ol>
+        <li>
+          <strong>Header:</strong>
+          <ul>
+            <li>
+              Usually a big strip across the top with a big heading, logo, and
+              perhaps a tagline.
+            </li>
+            <li>This usually stays the same from one webpage to another.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Navigation bar:</strong>
+          <ul>
+            <li>
+              Links to the site's main sections; usually represented by menu
+              buttons, links, or tabs.
+            </li>
+            <li>
+              Content usually remains consistent from one webpage to another
+            </li>
+            <li>Usually part of header, but not compulsorily</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Main content:</strong>
+          <ul>
+            <li>
+              Contains the main content, like articles, videos, text, headlines,
+              forms, etc.
+            </li>
+            <li>Varies from page to page</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Sidebar:</strong>
+          <ul>
+            <li>
+              Some peripheral info, links, quotes, ads, etc. in context with the
+              main content (for example on a news article page, the sidebar
+              might contain the author's bio, or links to related articles)
+            </li>
+            <li>
+              Or some recurring elements like a secondary navigation system.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Footer:</strong>
+          <ul>
+            <li>A strip across the bottom of the page</li>
+            <li>Contains fine print, copyright notices, or contact info.</li>
+            <li>
+              Contains common information but usually, which is not critical or
+              secondary to the website itself
+            </li>
+            <li>
+              Used for SEO purposes, by providing links for quick access to
+              popular content.
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </main>
+    <hr />
+    <!-- Footer -->
+    <footer>
+      <p>
+        <strong>
+          Copyright ©
+          <span id="year"></span>
+          VJTI Mumbai. All rights reserved.
+        </strong>
+      </p>
+    </footer>
+
+    <script>
+      // this method returns the current year
+      let year = new Date().getFullYear()
+      document.getElementById('year').innerHTML = year
+    </script>
+  </body>
+</html>

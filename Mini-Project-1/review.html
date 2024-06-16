@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/review.css" />
+  </head>
+  <body>
+    <special-header></special-header>
+    <main>
+      <section class="form">
+        <header>
+          <h1>Get in touch</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus sint
+            deserunt ab recusandae qui at amet doloremque quisquam voluptates
+            consectetur, molestiae temporibus! Delectus?
+          </p>
+        </header>
+        <form name="contact-form" onsubmit="return validateForm()">
+          <div class="formdesign" id="name">
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="Your name"
+              onfocus="this.placeholder=''"
+              onblur="this.placeholder='Your name'"
+              required
+            />
+            <span class="form-error"></span>
+          </div>
+          <div class="formdesign" id="email">
+            <input
+              type="email"
+              id="email-id"
+              name="email-id"
+              placeholder="Your email"
+              onfocus="this.placeholder=''"
+              onblur="this.placeholder='Your email'"
+              required
+            />
+            <span class="form-error"></span>
+          </div>
+          <div class="formdesign" id="mob-num-field">
+            <input
+              type="text"
+              id="mob-num"
+              name="mob-num"
+              placeholder="Your mobile number"
+              onfocus="this.placeholder=''"
+              onblur="this.placeholder='Your mobile number'"
+              required
+            />
+            <span class="form-error"></span>
+          </div>
+          <textarea
+            name="comment"
+            form="contact-form"
+            placeholder="Your message"
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='Your message'"
+          ></textarea>
+          <br /><br />
+          <input type="submit" value="Submit" />
+        </form>
+        <aside>
+          <div class="address">
+            <div class="symbol"><i class="fa-solid fa-location-dot"></i></div>
+            <h1>Address</h1>
+            <p>123 Street New York, USA</p>
+          </div>
+          <div class="email-field">
+            <div class="symbol"><i class="fa-solid fa-envelope"></i></div>
+            <h1>Mail Us</h1>
+            <p>info@gmail.com</p>
+          </div>
+          <div class="call">
+            <div class="symbol"><i class="fa-solid fa-phone"></i></div>
+            <h1>Telephone</h1>
+            <p>(+012) 3456 7890</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <special-footer></special-footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/connectHeaderFooter.js"></script>
+    <script src="./scripts/validateForm.js"></script>
+  </body>
+</html>

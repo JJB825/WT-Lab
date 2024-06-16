@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiment 1.3</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap&family=Roboto+Condensed:wght@300"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+      }
+      header {
+        text-align: center;
+        font-weight: 600;
+      }
+      h2 {
+        font-size: 25px;
+      }
+      main {
+        padding: 10px;
+      }
+      form {
+        padding: 5px;
+      }
+      .questions {
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 14px;
+        cursor: default;
+      }
+
+      label {
+        cursor: pointer;
+      }
+
+      input[type='text'],
+      select {
+        width: 200px;
+        padding: 10px;
+        margin: 5px 5px 5px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      input[type='checkbox'],
+      input[type='radio'] {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin-right: 5px;
+      }
+      input[type='submit'],
+      input[type='reset'] {
+        background-color: rgb(64, 121, 254);
+        font-size: large;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        margin: 15px 10px 10px 10px;
+        cursor: pointer;
+      }
+      input[type='submit']:hover,
+      input[type='reset']:hover {
+        background-color: rgb(20, 54, 134);
+      }
+      footer {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 17px;
+        color: black;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Task 3: Course Registration</h1>
+    </header>
+    <main>
+      <h2>Please fill in the details below:</h2>
+      <form action="./submit">
+        <label for="name" class="questions">Name:</label>
+        <br />
+        <input
+          type="text"
+          id="first_name"
+          placeholder="First Name.."
+          onblur="this.placeholder='First Name..'"
+          onfocus="this.placeholder=''"
+          name="name"
+        />
+        <input
+          type="text"
+          id="middle_name"
+          placeholder="Middle Name.."
+          onblur="this.placeholder='Middle Name..'"
+          onfocus="this.placeholder=''"
+          name="name"
+        />
+        <input
+          type="text"
+          id="last_name"
+          placeholder="Last Name.."
+          onfocus="this.placeholder=''"
+          onblur="this.placeholder='Last Name..'"
+          name="name"
+        />
+        <br /><br />
+        <label for="regNo" class="questions">Registration ID:</label><br />
+        <input
+          type="text"
+          id="regNo"
+          placeholder="Registration ID.."
+          onfocus="this.placeholder=''"
+          onblur="this.placeholder='Registration ID..'"
+          name="regNo"
+        />
+        <br /><br />
+        <label for="currentSem" class="questions">Current Semester:</label>
+        <select name="currentSem" id="currentSem">
+          <option value="">Choose current semester</option>
+          <option value="Semester 1">Semester 1</option>
+          <option value="Semester 2">Semester 2</option>
+          <option value="Semester 3">Semester 3</option>
+          <option value="Semester 4">Semester 4</option>
+          <option value="Semester 5">Semester 5</option>
+          <option value="Semester 6">Semester 6</option>
+          <option value="Semester 7">Semester 7</option>
+          <option value="Semester 8">Semester 8</option>
+        </select>
+        <br /><br />
+        <label for="department" class="questions">Department: </label>
+        <br />
+        <input
+          type="radio"
+          name="department"
+          id="cs"
+          value="Computer Engineering"
+        />
+        <label for="cs">Computer Engineering</label><br />
+        <input
+          type="radio"
+          name="department"
+          id="it"
+          value="Information Technology"
+        />
+        <label for="it">Information Technology</label><br />
+        <input
+          type="radio"
+          name="department"
+          id="extc"
+          value="Electronics and Telecommunication Engineering"
+        />
+        <label for="extc">Electronics and Telecommunication Engineering</label
+        ><br />
+        <input
+          type="radio"
+          name="department"
+          id="tronics"
+          value="Electronics Engineering"
+        />
+        <label for="tronics">Electronics Engineering</label><br />
+        <input
+          type="radio"
+          name="department"
+          id="ee"
+          value="Electrical Engineering"
+        />
+        <label for="ee">Electrical Engineering</label><br />
+        <input
+          type="radio"
+          name="department"
+          id="me"
+          value="Mechanical Engineering"
+        />
+        <label for="me">Mechanical Engineering</label><br />
+        <input
+          type="radio"
+          name="department"
+          id="ce"
+          value="Civil Engineering"
+        />
+        <label for="ce">Civil Engineering</label><br />
+        <input
+          type="radio"
+          name="department"
+          id="pe"
+          value="Production Engineering"
+        />
+        <label for="pe">Production Engineering</label><br /><br />
+        <label for="subjects" class="questions">
+          Choose all subjects that you have opted for this semester: </label
+        ><br />
+        <input type="checkbox" name="dia" id="dia" value="dia" /><label
+          for="dia"
+          >Data Interpretation and Analysis</label
+        ><br />
+        <input type="checkbox" name="at" id="at" value="at" /><label for="at"
+          >Automata Theory</label
+        ><br />
+        <input type="checkbox" name="daa" id="daa" value="daa" /><label
+          for="daa"
+          >Design and Analysis of Algorithms</label
+        ><br />
+        <input type="checkbox" name="os" id="os" value="os" /><label for="os"
+          >Operating Systems</label
+        ><br />
+        <input type="checkbox" name="os-lab" id="os-lab" value="os-lab" /><label
+          for="os-lab"
+          >Operating Systems Lab</label
+        ><br />
+        <input type="checkbox" name="dbms" id="dbms" value="dbms" /><label
+          for="dbms"
+          >Database Management Systems</label
+        ><br />
+        <input
+          type="checkbox"
+          name="dbms-lab"
+          id="dbms-lab"
+          value="dbms-lab"
+        /><label for="dbms-lab">Database Management Systems Lab</label><br />
+        <input type="checkbox" name="wt-lab" id="wt-lab" value="wt-lab" /><label
+          for="wt-lab"
+          >Web Technologies Lab</label
+        ><br />
+        <input type="checkbox" name="de" id="de" value="de" /><label for="de"
+          >Development Engineering</label
+        ><br /><br />
+        <label for="terms&conditions-heading" class="questions"
+          >Terms and Conditions:</label
+        ><br />
+        <input
+          type="checkbox"
+          name="terms&conditions"
+          id="terms&conditions"
+          value="Terms and Conditions"
+        /><label for="terms&conditions"
+          >I have accepted and shall abide to the terms and conditons as
+          mentioned in the institutions policy</label
+        ><br />
+        <input type="reset" value="Reset" />
+        <input type="submit" value="Submit" />
+      </form>
+    </main>
+    <hr />
+    <footer>
+      <p>
+        <strong>
+          Copyright ©
+          <span id="year"></span>
+          VJTI Mumbai. All rights reserved.
+        </strong>
+      </p>
+    </footer>
+
+    <script>
+      let year = new Date().getFullYear()
+      document.getElementById('year').innerHTML = year
+    </script>
+  </body>
+</html>

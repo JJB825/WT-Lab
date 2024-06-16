@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiment 1.1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+      }
+      header {
+        text-align: center;
+        font-weight: 600;
+      }
+      h2 {
+        font-size: 25px;
+      }
+      img {
+        height: 150px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-weight: 400;
+      }
+      td,
+      th {
+        border: 1px solid black;
+        text-align: center;
+        padding: 8px;
+      }
+      th {
+        font-weight: 800;
+      }
+      .blue {
+        background-color: rgb(171, 82, 255);
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .heading {
+        background-color: rgb(55, 255, 0);
+      }
+      .course {
+        background-color: rgb(251, 170, 41);
+      }
+      footer {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 17px;
+        color: black;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Task 1: Online Resume</h1>
+    </header>
+    <main>
+      <h2>About Me</h2>
+      <table>
+        <tr class="blue">
+          <th class="heading">Name</th>
+          <td colspan="3">Jishnu Jayant Bandodkar</td>
+        </tr>
+        <tr>
+          <th class="heading">Profile Image</th>
+          <td colspan="3" class="course">
+            <img src="./jish.jpg" alt="profic picture" />
+          </td>
+        </tr>
+        <tr class="blue">
+          <th class="heading">Registration Number</th>
+          <td colspan="3">221070006</td>
+        </tr>
+        <tr>
+          <th rowspan="5" class="heading">Academics Section</th>
+          <th class="yellow">10th</th>
+          <td class="yellow" colspan="2">96.20%</td>
+        </tr>
+        <tr class="yellow">
+          <th>12th</th>
+          <td colspan="2">92.17%</td>
+        </tr>
+        <tr class="blue">
+          <th rowspan="3">First Year Engineering</th>
+          <th>First Semester</th>
+          <td>8.45 SPI</td>
+        </tr>
+        <tr class="blue">
+          <th>Second Semester</th>
+          <td>9.45 SPI</td>
+        </tr>
+        <tr class="blue">
+          <th>First Year</th>
+          <td>8.95 CPI</td>
+        </tr>
+        <tr>
+          <th rowspan="4" class="heading">Skill Set</th>
+          <th class="course">Course Name</th>
+          <td class="course" colspan="2">Web Technologies Lab</td>
+        </tr>
+        <tr class="course">
+          <th>Course Code</th>
+          <td colspan="2">R4CO2011A</td>
+        </tr>
+        <tr class="course">
+          <th rowspan="2">Other Skills</th>
+          <th>Web Development</th>
+          <td>HTML, CSS, Node.js, Express.js</td>
+        </tr>
+        <tr class="course">
+          <th>Other Programming languages</th>
+          <td>C, C++, Python</td>
+        </tr>
+      </table>
+    </main>
+    <hr />
+    <footer>
+      <p>
+        <strong>
+          Copyright ©
+          <span id="year"></span>
+          VJTI Mumbai. All rights reserved.
+        </strong>
+      </p>
+    </footer>
+
+    <script>
+      let year = new Date().getFullYear()
+      document.getElementById('year').innerHTML = year
+    </script>
+  </body>
+</html>

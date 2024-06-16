@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic HTML</title>
+    <style>
+      body {
+        font-size: 22px;
+        font-weight: 500;
+      }
+      .form {
+        position: relative;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 800px;
+        margin: 0 auto;
+        padding: 5px;
+      }
+      .form-error {
+        color: red;
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 10px;
+      }
+      .formdesign {
+        margin: 10px;
+        padding: 5px 0;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type='text'],
+      input[type='number'],
+      input[type='month'],
+      input[type='email'] {
+        width: 50%;
+        padding: 5px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 17px;
+      }
+      input[type='submit'],
+      input[type='reset'] {
+        width: 100%;
+        background-color: rgb(4, 158, 120);
+        font-size: large;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.5s;
+      }
+      input[type='submit']:hover,
+      input[type='reset']:hover {
+        background-color: rgb(79, 208, 4);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center; color: blueviolet; margin-bottom: 0">
+      Card Validation form
+    </h1>
+    <div class="form">
+      <h2 style="text-align: center; margin-top: 0">Confirm Purchase</h2>
+      <form
+        action="./submit.php"
+        name="card-validate-form"
+        method="post"
+        onsubmit="return validateForm()"
+      >
+        <div class="formdesign" id="name">
+          <label for="fname">Owner:</label>
+          <input type="text" id="fname" name="fname" required />
+          <span class="form-error"></span>
+        </div>
+        <div class="formdesign" id="cvv">
+          <label for="card-cvv">CVV:</label>
+          <input type="text" id="card-cvv" name="card-cvv" required />
+          <span class="form-error"></span>
+        </div>
+        <div class="formdesign" id="email">
+          <label for="email-id">Email:</label>
+          <input type="email" id="email-id" name="email-id" required />
+          <span class="form-error"></span>
+        </div>
+        <div class="formdesign" id="num">
+          <label for="card-num">Card Number:</label>
+          <input type="text" id="card-num" name="card-num" required />
+          <span class="form-error"></span>
+        </div>
+        <div class="formdesign" id="expiry">
+          <label for="card-expiry">Expiry Date:</label>
+          <input type="month" id="card-expiry" name="card-expiry" required />
+          <span class="form-error"></span>
+        </div>
+        <input type="submit" value="Confirm" />
+      </form>
+    </div>
+
+    <script>
+      function setError(id, err) {
+        // sets error inside id tag
+        element = document.getElementById(id)
+        element.getElementsByClassName('form-error')[0].innerHTML = err
+      }
+      function validateForm() {
+        var returnval = true
+        // validates form content by certain constraints and returns returnval
+        var name = document.forms['card-validate-form']['fname'].value
+        var letters = /^[A-Za-z]+$/
+        if (!name.match(letters)) {
+          setError('name', '*Please enter your name properly')
+          returnval = false
+        }
+        var cvv = document.forms['card-validate-form']['card-cvv'].value
+        var validcvvRegex = /^\d{3}$/
+        if (!cvv.match(validcvvRegex)) {
+          setError('cvv', '*Please enter valid CVV')
+          returnval = false
+        }
+        var email = document.forms['card-validate-form']['email-id'].value
+        var validemailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+        if (!email.match(validemailRegex)) {
+          setError('email', '*Please enter valid email id')
+          returnval = false
+        }
+        var cardnum = document.forms['card-validate-form']['card-num'].value
+        var cnumRegex = /^(\d{4}[\s-]?){3}\d{4}$/
+        if (!cardnum.match(cnumRegex)) {
+          setError('num', '*Please enter valid card number')
+          returnval = false
+        }
+        var expiryMonth = new Date(
+          document.forms['card-validate-form']['card-expiry'].value
+        )
+        var currentMonth = new Date()
+        if (expiryMonth < currentMonth) {
+          setError('expiry', '*Your card has expired')
+          returnval = false
+        }
+        return returnval
+      }
+    </script>
+  </body>
+</html>

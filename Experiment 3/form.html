@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navy Entry form</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap&family=Roboto+Condensed:wght@300"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        background-image: url('./background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      header {
+        text-align: center;
+        font-weight: 600;
+      }
+      .questions {
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 14px;
+        cursor: default;
+      }
+      label {
+        cursor: pointer;
+      }
+      input[type='text'],
+      input[type='date'],
+      select {
+        width: 200px;
+        padding: 10px;
+        margin: 5px 5px 5px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      textarea {
+        width: 200px;
+        margin-top: 10px;
+        padding: 10px 5px;
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        font-size: 15px;
+      }
+      input[type='submit'],
+      input[type='reset'] {
+        background-color: rgb(64, 121, 254);
+        font-size: large;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        margin: 15px 10px 10px 10px;
+        cursor: pointer;
+      }
+      input[type='submit']:hover,
+      input[type='reset']:hover {
+        background-color: rgb(20, 54, 134);
+      }
+      footer {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 17px;
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Indian Navy Recruitment</h1>
+    </header>
+    <main style="padding: 10px">
+      <h2 style="font-size: 25px">Please fill in the details below:</h2>
+      <form style="padding: 5px" action="./submit">
+        <label for="name" class="questions">Name:</label>
+        <br />
+        <input
+          type="text"
+          id="first_name"
+          placeholder="First Name.."
+          onblur="this.placeholder='First Name..'"
+          onfocus="this.placeholder=''"
+          name="name"
+        />
+        <input
+          type="text"
+          id="middle_name"
+          placeholder="Middle Name.."
+          onblur="this.placeholder='Middle Name..'"
+          onfocus="this.placeholder=''"
+          name="name"
+        />
+        <input
+          type="text"
+          id="last_name"
+          placeholder="Last Name.."
+          onfocus="this.placeholder=''"
+          onblur="this.placeholder='Last Name..'"
+          name="name"
+        />
+        <br /><br />
+        <label for="email" class="questions">Email:</label><br />
+        <input
+          type="text"
+          id="email"
+          placeholder="Email.."
+          onfocus="this.placeholder=''"
+          onblur="this.placeholder='Email..'"
+          name="email"
+        />
+        <br /><br />
+        <label for="birth-date" class="questions">Birth-Date:</label>
+        <input type="date" id="birthday" name="birthday" />
+        <br /><br />
+        <label for="education" class="questions">Education:</label>
+        <select name="education" id="education">
+          <option value="">Education</option>
+          <option value="b.sc">B.Sc</option>
+          <option value="b.tech">B.Tech</option>
+          <option value="m.tech">M.Tech</option>
+        </select>
+        <br /><br />
+        <label for="wish" class="questions"
+          >Why do you want to join the Indian Navy :</label
+        ><br />
+        <textarea
+          name="wish"
+          form="entryform"
+          placeholder="Enter text here..."
+          onfocus="this.placeholder=''"
+          onblur="this.placeholder='Enter text here...'"
+        ></textarea>
+        <br /><br />
+        <input type="reset" value="Reset" />
+        <input type="submit" value="Submit" />
+      </form>
+    </main>
+    <footer>
+      <p>
+        <strong>
+          Copyright ©
+          <span id="year"></span>
+          VJTI Mumbai. All rights reserved.
+        </strong>
+      </p>
+    </footer>
+
+    <script>
+      let year = new Date().getFullYear()
+      document.getElementById('year').innerHTML = year
+    </script>
+  </body>
+</html>

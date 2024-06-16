@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiment 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Inconsolata', monospace;
+        font-size: 22px;
+        color: white;
+        background: linear-gradient(to right, #000000, #1f0c34, #2d0e4d);
+      }
+      #solar-system {
+        display: block;
+        width: 1076px;
+        height: 717px;
+        margin: auto;
+      }
+      #coordinates {
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 style="text-align: center">Experiment 2</h1>
+    </header>
+    <main>
+      <h2>The Solar System</h2>
+      <p>
+        The Solar System is the gravitationally bound system of the Sun and the
+        objects that orbit it. The largest of these objects are the eight
+        planets, which in order from the Sun are four terrestrial planets
+        (Mercury, Venus, Earth and Mars); two gas giants (Jupiter and Saturn);
+        and two ice giants (Uranus and Neptune). The Solar System developed 4.6
+        billion years ago when a dense region of a molecular cloud collapsed,
+        forming the Sun and a protoplanetary disc.
+      </p>
+      <h2>Click on Earth, Jupiter and Saturn below to more about them 👇</h2>
+      <img id="solar-system" src="./solar system.png" usemap="#planet-map" />
+      <div style="position: relative">
+        <h3>
+          You can see the coordinates of mouse on hovering over the image:
+        </h3>
+        <div id="coordinates"></div>
+      </div>
+      <map name="planet-map">
+        <area
+          target="_blank"
+          alt="Describe about earth"
+          title="Click me to know more about Earth"
+          href="./earth.html"
+          coords="507,404,33"
+          shape="circle"
+        />
+        <area
+          target="_blank"
+          alt="Describe about Jupiter"
+          title="Click me to know more about Jupiter"
+          href="./jupiter.html"
+          coords="156,595,107"
+          shape="circle"
+        />
+        <area
+          target="_blank"
+          alt="Describe about Saturn"
+          title="Click me to know more about Saturn"
+          href="./saturn.html"
+          coords="968,99,95"
+          shape="circle"
+        />
+      </map>
+    </main>
+    <script>
+      const image = document.getElementById('solar-system')
+      const coordinatesDiv = document.getElementById('coordinates')
+      function displayCoordinates(event) {
+        const rect = image.getBoundingClientRect()
+        const x = Math.round(event.clientX - rect.left)
+        const y = Math.round(event.clientY - rect.top)
+
+        coordinatesDiv.textContent = `X: ${x}, Y: ${y}`
+        coordinatesDiv.style.left = '10px'
+        coordinatesDiv.style.top = '10px'
+      }
+      image.addEventListener('mousemove', displayCoordinates)
+    </script>
+  </body>
+</html>
